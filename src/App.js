@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import './App.css';
 import MovieCard from './movie-card';
+import { wait } from "@testing-library/user-event/dist/utils";
 
 
 function App() {
@@ -9,14 +10,32 @@ function App() {
 
   const cargaPeliculas = async () => {
       
+    const API_KEY = "fb3ebe5d932f72c2066066485b317f9c";
+    const BASE_URL = "https://api.themoviedb.org/3";
+
     const page = Math.floor(Math.random() * 500);
-    const URL = `https://api.themoviedb.org/3/movie/popular?api_key=fb3ebe5d932f72c2066066485b317f9c&language=es-ES&page=`+ page;
+    const URL = `${BASE_URL}/movie/popular?api_key=${API_KEY}&language=es-ES&page=`+ page;
 
     const response = await fetch(URL);
     const data = await response.json();
 
-    const shuffled = data.results.sort(() => 0.5 - Math.random());
-    setMovies(shuffled.slice(0, 6));
+    const shuffled = data.results.sort(() => 0.5 - Math.random()).slice(0, 6);
+
+      // Obtener el `imdb_id` para cada película
+      const moviesWithIMDb = await Promise.all(
+        shuffled.map(async (movie) => {
+          const detailsResponse = await fetch(`${BASE_URL}/movie/${movie.id}?api_key=${API_KEY}&language=es-ES`);
+          const details = await detailsResponse.json();
+          return {
+            ...movie,
+            imdbLink: `https://www.imdb.com/title/${details.imdb_id}/`,
+          };
+        })
+      );
+
+      setMovies(moviesWithIMDb);
+
+
   };
 
   useEffect(() => {
@@ -34,7 +53,9 @@ function App() {
             <MovieCard 
               titulo={movie.title} 
               poster={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
-              puntuacion={movie.vote_average}>  
+              puntuacion={movie.vote_average}
+              id = {movie.id}
+              imdb_id={movie.imdbLink}>  
             </MovieCard>
           ))}
       </div>

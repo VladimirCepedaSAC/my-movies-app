@@ -45,8 +45,14 @@
   width: 200px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   color:#282c34;
+
 }
 
+.movie-card-text{
+  display: flex;
+  flex-direction: column;
+  justify-content:space-between ;
+}
 
 .movie-card img {
   width: 100%;
@@ -75,4 +81,20 @@
   color: white;
   cursor: pointer;
   transition: background-color 0.3s ease;
+}
+
+.imdb-link {
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.movie-card .imdb-logo {
+  width: 50px;
+  height: auto;
+  max-width: none;
+  transition: transform 0.2s ease;
+}
+
+.movie-card .imdb-logo:hover {
+  transform: scale(1.1);
 }

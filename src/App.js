@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from "react";
 import './App.css';
 import MovieCard from './movie-card';
-import { wait } from "@testing-library/user-event/dist/utils";
 
 
 function App() {

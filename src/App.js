@@ -47,7 +47,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-          <h1>Peliculas sugeridas</h1>
+          <h1>RandomFlix</h1>
           <div class="movie-container" >
           {movies.map((movie)=>(
             <MovieCard 

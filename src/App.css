@@ -43,7 +43,7 @@
   border-radius: 8px;
   overflow: hidden;
   width: 200px;
-  height: 450px;
+  height: 46  0px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   color:#282c34;
   display: flex; /* Activa el modelo de flexbox */
@@ -75,7 +75,7 @@
 .movie-card p {
   color: gray;
   font-size: 14px;
-  margin: 5px 0 15px 0; /* Espaciado entre el título y el resto del contenido */
+  margin: 5px 0 5px 0; /* Espaciado entre el título y el resto del contenido */
 }
 
 .App-header button {

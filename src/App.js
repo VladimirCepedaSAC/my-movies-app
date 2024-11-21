@@ -55,7 +55,9 @@ function App() {
               poster={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
               puntuacion={movie.vote_average}
               id = {movie.id}
-              imdb_id={movie.imdbLink}>  
+              imdb_id={movie.imdbLink}
+              year={new Date(movie.release_date).getFullYear()}
+              >  
             </MovieCard>
           ))}
       </div>

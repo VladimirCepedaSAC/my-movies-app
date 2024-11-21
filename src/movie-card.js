@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 
 
-function MovieCard({titulo,poster,puntuacion,id,imdb_id}){
+function MovieCard({titulo,poster,puntuacion,id,imdb_id,year}){
     return(
     <div class="movie-card" id={id}>
       <img src={poster}/>
         <h3 >{titulo}</h3>
+        <p>{year}</p>
         <p>Puntuacion: {puntuacion}</p>
         <a href={imdb_id} target="_blank" rel="noopener noreferrer" className="imdb-link">
         <img

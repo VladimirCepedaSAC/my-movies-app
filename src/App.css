@@ -43,16 +43,15 @@
   border-radius: 8px;
   overflow: hidden;
   width: 200px;
+  height: 450px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   color:#282c34;
-
+  display: flex; /* Activa el modelo de flexbox */
+  flex-direction: column; /* Alinea los elementos en columna */
+  justify-content: space-between; /* Espacia los elementos: título y enlace */
 }
 
-.movie-card-text{
-  display: flex;
-  flex-direction: column;
-  justify-content:space-between ;
-}
+
 
 .movie-card img {
   width: 100%;
@@ -67,8 +66,16 @@
   justify-content: center;
 }
 
-.movie-card p{
+.movie-card h3 {
+  margin: 10px 0 5px 0; /* Espaciado entre la imagen y el título */
+  font-size: 16px;
+  text-align: center;
+}
+
+.movie-card p {
   color: gray;
+  font-size: 14px;
+  margin: 5px 0 15px 0; /* Espaciado entre el título y el resto del contenido */
 }
 
 .App-header button {
@@ -84,14 +91,17 @@
 }
 
 .imdb-link {
-  display: inline-block;
-  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto; /* Empuja el enlace hacia la parte inferior */
+  padding: 10px;
 }
 
 .movie-card .imdb-logo {
   width: 50px;
   height: auto;
-  max-width: none;
+
   transition: transform 0.2s ease;
 }
 

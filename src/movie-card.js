@@ -5,8 +5,7 @@ function MovieCard({titulo,poster,puntuacion,id,imdb_id}){
     return(
     <div class="movie-card" id={id}>
       <img src={poster}/>
-      <div className="movie-card-text">
-        <h4>{titulo}</h4>
+        <h3 >{titulo}</h3>
         <p>Puntuacion: {puntuacion}</p>
         <a href={imdb_id} target="_blank" rel="noopener noreferrer" className="imdb-link">
         <img
@@ -15,7 +14,6 @@ function MovieCard({titulo,poster,puntuacion,id,imdb_id}){
           className="imdb-logo"
         />
         </a>
-      </div>
     </div>
     )
 }

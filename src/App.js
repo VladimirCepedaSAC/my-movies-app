@@ -18,7 +18,7 @@ function App() {
     const response = await fetch(URL);
     const data = await response.json();
 
-    const shuffled = data.results.sort(() => 0.5 - Math.random()).slice(0, 6);
+    const shuffled = data.results.sort(() => 0.5 - Math.random()).slice(0, 5);
 
       // Obtener el `imdb_id` para cada película
       const moviesWithIMDb = await Promise.all(

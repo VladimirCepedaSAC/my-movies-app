@@ -9,6 +9,7 @@ function App() {
 
   const cargaPeliculas = async () => {
       
+
     const API_KEY = "fb3ebe5d932f72c2066066485b317f9c";
     const BASE_URL = "https://api.themoviedb.org/3";
 

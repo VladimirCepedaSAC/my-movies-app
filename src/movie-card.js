@@ -2,7 +2,7 @@ import StarRating from './stars-rating';
 
 function MovieCard({titulo,poster,puntuacion,id,imdb_id,year}){
     return(
-    <div class="movie-card" id={id}>
+    <div class="movie-card" id={id} key={id}>
       <img src={poster} alt={titulo}/>
         <h3 >{titulo}</h3>
         <p>{year}</p>
